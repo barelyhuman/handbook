@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+
+
+    <h1>Git Setup</h1>
+
+    <ul>
+        <li>For System Setup, refer to <a href="index.html">System Setup readme</a>*</li>
+    </ul>
+
+    <ul>
+        <li>Setup SSH Keys: https://help.github.com/articles/generating-ssh-keys/</li>
+        <li>Clone the repository : <code>git clone &lt;repo-url&gt;</code></li>
+    </ul>
+    <h3>Git Guidelines</h3>
+    <ul>
+        <li>Keep logical commits and code formatting commits separate.</li>
+        <li>Proper commit message is a must.</li>
+        <li>Make your commits at most granular level. Make frequent commits with little code changes rather than seldom
+            commits with huge code change.</li>
+        <li>Do not use https for auth. Always rely on ssh.</li>
+        <li>Make sure your code goes through the <code>development</code> and <code>testing</code> branches before it is
+            merged into <code>stable</code></li>
+        <li>Make sure you get your code reviewed before merging to <code>stable</code>.</li>
+        <li><code>stable</code> branch should always be stable branch and same as production servers.</li>
+        <li>Never force push master branch.</li>
+        <li>Do not merge your branch in master locally. Always create a pull request.</li>
+        <li>Create different branches for different features. This will help in reducing features inter-dependnce at the
+            time of deployment.</li>
+        <li>Never force-push a branch to server</li>
+    </ul>
+    <h3>Frequently used git command set</h3>
+    <p>Before starting work on a new feature, make sure to switch to <code>stable</code> branch and pull the latest
+        code.
+        Create a new branch from it locally and push to server</p>
+    <pre><code>git checkout stable
+git pull origin stable
+git checkout -b feature-abc
+git push -u origin feature-abc
+</code></pre>
+    <p>To see your unstaged changes</p>
+    <pre><code>git diff
+</code></pre>
+    <p>To get latest code from master branch into your branch, rebase!</p>
+    <pre><code>git rebase master
+</code></pre>
+    <p>You can also do a local merge from mastr branch to your feature branch. Make sure to never do this merge on
+        server
+        using a pull request.</p>
+    <pre><code>git merge master
+</code></pre>
+    <p>To store uncommited changes locally, stash them</p>
+    <pre><code>git stash
+</code></pre>
+    <p>Apply last stash to bring it back</p>
+    <pre><code>git stash apply
+</code></pre>
+    <p>To rebase your branch before pushing to server</p>
+    <pre><code>git pull --rebase origin feature-abc
+</code></pre>
+    <p>To push your changes to server</p>
+    <pre><code>git push origin feature-abc
+</code></pre>
+
+</body>
+
+</html>

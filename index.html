@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <h1>System Setup</h1>
+    <ul>
+        <li>For git guidelines and instructions, refer to <a href="GIT.html">Git readme</a>*</li>
+    </ul>
+    <h3>Install necessary packages</h3>
+    <p>On MAC OS X</p>
+    <pre><code>brew install git
+brew install wget
+</code></pre>
+    <p>On Ubuntu</p>
+    <pre><code>apt install git
+apt install wget
+</code></pre>
+    <h3>Install NVM and node version 8.9.0</h3>
+    <pre><code>touch ~/.bash_profile
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+source ~/.bash_profile
+nvm install 10
+nvm use 10
+nvm alias default 10
+</code></pre>
+    <h3>Install global packages</h3>
+    <pre><code>npm install -g loopback-cli yarn nodemon
+</code></pre>
+    <h3>Install local dependencies from project directory</h3>
+    <p><code>npm install</code> or <code>yarn install</code></p>
+    <h3>Creating a local mysql database</h3>
+    <p>Install postgresql server locally. Create a user named <code>admin</code> password as <code>root</code>
+        Create a database named <code>boilerplate-database</code></p>
+    <h3>Starting server on your machine</h3>
+    <p>You can start forever with watch flag, which will reload your server on any file change.
+        You can access the application at <code>localhost:3000</code> and the swagger ui explorer at
+        <code>localhost:3000/explorer</code></p>
+    <ul>
+        <li>
+            <p>Starting Node server
+                <code>nodemon .</code></p>
+        </li>
+        <li>
+            <p>Starting Node Console:
+                <code>node . --console</code></p>
+        </li>
+    </ul>
+    <h3>Text editor settings</h3>
+    <p>Please make sure your text editor is configured properly before you start contributing.
+        Use below settings for sublime text editor.</p>
+    <pre><code>&quot;tab_size&quot;: 2,
+&quot;translate_tabs_to_spaces&quot;: true,
+&quot;trim_trailing_white_space_on_save&quot;: true,
+&quot;ensure_newline_at_eof_on_save&quot;: true,
+</code></pre>
+    <p>Use below settings for visual studio Code. Install <code>tslint</code>, <code>HTMLHint</code>,
+        <code>stylelint</code>, <code>stylefmt</code> and <code>eslint</code> pluggins for VSCode.</p>
+    <pre><code>&quot;editor.tabSize&quot;: 2,
+&quot;editor.insertSpaces&quot;: true,
+&quot;editor.trimAutoWhitespace&quot;: true,
+&quot;files.insertFinalNewline&quot;: true,
+&quot;editor.formatOnSave&quot;: true
+</code></pre>
+
+</body>

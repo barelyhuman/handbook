@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css');
+
+body {
+	@apply p-safe min-h-screen text-zinc-900 bg-zinc-50 dark:text-zinc-50 dark:bg-zinc-900 antialiased select-none;
+
+	/* PWA enhancements */
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+h1 {
+	@apply text-2xl font-semibold text-zinc-800 dark:text-zinc-200;
+}
+
+h2 {
+	@apply my-2 text-xl font-semibold text-zinc-800 dark:text-zinc-200;
+}
+
+h3 {
+	@apply my-2 text-lg font-semibold text-zinc-800 dark:text-zinc-200;
+}
+
+p {
+	@apply my-3 text-zinc-600 dark:text-zinc-400;
+}
+
+a {
+	@apply text-zinc-600 underline underline-offset-4 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50;
+}
+
+pre {
+	@apply m-2 p-3 rounded bg-zinc-100 dark:bg-zinc-800 overflow-auto;
+}
+
+code {
+	@apply text-base text-indigo-600 dark:text-indigo-400;
+	font-family: 'Hack', monospace;
+}
+
+ul {
+	@apply list-disc pl-6 dark:text-zinc-400 text-zinc-600;
+}

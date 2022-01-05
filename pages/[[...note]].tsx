@@ -1,36 +1,32 @@
 import Page from '@/components/page'
 import Section from '@/components/section'
 import { getNotes } from '@/lib/get-notes'
-// @ts-ignore
-import DeveloperMentality from '@/notes/mentality.mdx'
-// @ts-ignore
-import WelcomeNote from '@/notes/welcome.mdx'
-// @ts-ignore
-import GitNote from '@/notes/git.mdx'
-// @ts-ignore
-import WorkstationNote from '@/notes/workstation.mdx'
-
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 
-const notesMap = {
-	mentality: DeveloperMentality,
-	welcome: WelcomeNote,
-	git: GitNote,
-	workstation: WorkstationNote,
+const NOTE_COMPONENTS = {
+	// @ts-ignore
+	mentality: () => dynamic(() => import('../notes/mentality.mdx')),
+	// @ts-ignore
+	welcome: () => dynamic(() => import('../notes/welcome.mdx')),
+	// @ts-ignore
+	git: () => dynamic(() => import('../notes/git.mdx')),
+	// @ts-ignore
+	workstation: () => dynamic(() => import('../notes/workstation.mdx')),
 }
+
 const defaultKey = 'welcome'
 
 const NoteSlug = () => {
 	const router = useRouter()
 	const { note } = router.query
-	console.log({ q: router.query })
 
-	const asNoteKey = note as keyof typeof notesMap
+	const asNoteKey = note as keyof typeof NOTE_COMPONENTS
 
-	let Note: any = notesMap[defaultKey]
+	let Note: any = NOTE_COMPONENTS[defaultKey]()
 
-	if (asNoteKey && notesMap[asNoteKey]) {
-		Note = notesMap[asNoteKey]
+	if (asNoteKey && NOTE_COMPONENTS[asNoteKey]) {
+		Note = NOTE_COMPONENTS[asNoteKey]()
 	}
 
 	return (

@@ -1,6 +1,11 @@
-import Link from 'next/link'
+---
+layout: layouts/base.njk
+title: Mentality
+description: Developer's Mentality
+crumbs: [{ title: "Developer's Mentality", href: "#" }]
+---
 
-## Developer Mentality
+# Developer's Mentality
 
 I work with various stacks and there's always room for improvement in most stacks, some setup's
 might not be as developer friendly (developer experience wise) and these vary from stack to stack
@@ -17,5 +22,3 @@ one developer's editor style was different than the other and each have their ow
 and the need for handling staged files, I've written custom plugins for these and they are tedios to setup
 so we now have a few projects that are experimenting with `lefthook` and if that works as expected, that'll be
 migrated to other projects accordingly
-
-[Go Back](/)

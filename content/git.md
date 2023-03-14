@@ -1,4 +1,11 @@
-## Git Setup
+---
+layout: layouts/base.njk
+title: Git Flow
+description: How to use git and it's basics
+crumbs: [{ title: "Git Flow", href: "#" }]
+---
+
+# Git Setup
 
 - Setup SSH Keys: https://help.github.com/articles/generating-ssh-keys/
 
@@ -69,5 +76,3 @@ To push your changes to server
 ```
 git push origin feature-abc
 ```
-
-[Go Back](/)

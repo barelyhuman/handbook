@@ -1,40 +1,35 @@
 {
-	"name": "next-pwa-template",
-	"version": "0.0.0",
-	"license": "MIT",
+	"name": "handbook",
+	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@mdx-js/loader": "^1.6.22",
-		"@next/mdx": "^12.0.7",
-		"next": "12.0.7",
-		"next-compose-plugins": "^2.2.1",
-		"next-pwa": "^5.4.4",
-		"next-themes": "^0.0.15",
-		"react": "17.0.2",
-		"react-dom": "17.0.2"
-	},
-	"devDependencies": {
-		"@types/node": "^16.11.12",
-		"@types/react": "^17.0.37",
-		"autoprefixer": "^10.4.0",
-		"eslint": "^8.4.1",
-		"eslint-config-next": "^12.0.7",
-		"eslint-config-prettier": "^8.3.0",
-		"postcss": "^8.4.4",
-		"prettier": "^2.5.1",
-		"tailwindcss": "^3.0.0",
-		"tailwindcss-safe-area": "^0.2.2",
-		"typescript": "^4.5.3"
+		"clean": "del-cli _site",
+		"dev:css": "npx postcss style.css -o _site/style.css -w",
+		"dev:11ty": "npx @11ty/eleventy --serve",
+		"dev": "run-p dev:*",
+		"build:css": "NODE_ENV=production npx postcss style.css -o _site/style.css -m",
+		"build:11ty": "npx @11ty/eleventy",
+		"build": "npm run clean && run-s build:*"
 	},
 	"prettier": {
-		"semi": false,
-		"singleQuote": true,
-		"jsxSingleQuote": true,
-		"useTabs": true
+		"useTabs": true,
+		"plugins": [
+			"prettier-plugin-tailwindcss"
+		]
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.0",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.15",
+		"del-cli": "^5.0.0",
+		"luxon": "^3.3.0",
+		"markdown-it-link-attributes": "^4.0.1",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"prettier": "^2.8.4",
+		"prettier-plugin-tailwindcss": "^0.2.4",
+		"tailwindcss": "^3.2.7",
+		"tailwindcss-safe-area": "^0.2.2"
 	}
 }

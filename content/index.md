@@ -1,4 +1,8 @@
-import Link from 'next/link'
+---
+layout: layouts/base.njk
+title: Welcome
+description: Handbook
+---
 
 ## Hey Developer
 
@@ -15,22 +19,21 @@ to share with you so we can maintain consistency while working together.
 
 <ul>
 	<li className='my-1'>
-		<Link href='/mentality'>
-			<a className='text-900 dark:text-50'>Developer Mentality</a>
-		</Link>
+			<a className='text-900 dark:text-50' href='/mentality'>Developer Mentality</a>
 	</li>
 	<li className='my-1'>
-		<Link href='/git'>
-			<a className='text-900 dark:text-50' href='/git-flow'>
+			<a className='text-900 dark:text-50' href='/git'>
 				Git Flow Fundamentals
 			</a>
-		</Link>
 	</li>
 	<li className='my-1'>
-		<Link href='/workstation'>
-			<a className='text-900 dark:text-50' href='/workstation-setup'>
+			<a className='text-900 dark:text-50' href='/workstation'>
 				Workstation Setup
 			</a>
-		</Link>
+	</li>
+	<li className='my-1'>
+			<a className='text-900 dark:text-50' href='/node-basics'>
+				Node Basics
+			</a>
 	</li>
 </ul>

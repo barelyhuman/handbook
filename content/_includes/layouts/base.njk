@@ -1,0 +1,47 @@
+---
+locale: en
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ locale }}">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.gif" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{{ description }}" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="alternative" type="application/rss+xml" title="RSS" href="/rss.xml" />
+		<title>{{ title }}</title>
+	</head>
+
+	<body>
+		<a href="#content" class="sr-only">Skip to main content</a>
+
+		<div
+			aria-hidden="true"
+			class="w-full absolute top-0 h-page-top bg-b-low z-20"
+		></div>
+
+		<div
+			aria-hidden="true"
+			class="fixed top-[-1000px] left-0 z-10 h-[calc(1000px+var(--header-height)+1px)] w-full border-b"
+		></div>
+
+		<header class="mt-page-top sticky top-0 z-20 h-header-height">
+			<div
+				class="flex h-header-height w-full items-center px-page-gutter before:absolute before:inset-0 before:z-[-1] before:bg-b-low [@supports(backdrop-filter:blur(0))]:before:bg-b-low-a [@supports(backdrop-filter:blur(0))]:before:backdrop-blur-md"
+			>
+				<div class="mx-auto border-b-2 border-b-zinc-800 flex w-full items-center pt-20 sm:pb-0 max-w-screen-md">
+					{% include "breadcrumbs.njk" %}
+				</div>
+			</div>
+		</header>
+
+		<main id="content" class='mx-auto px-safe pt-20 sm:pb-0 max-w-screen-md'>
+			<div class="min-h-content w-full max-w-content content mt-10">
+				{{ content | safe }}
+			</div>
+		</main>
+	</body>
+</html>

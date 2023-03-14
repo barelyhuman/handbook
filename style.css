@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css");
+
+body {
+	@apply min-h-screen bg-zinc-50 text-zinc-900 antialiased p-safe dark:bg-zinc-900 dark:text-zinc-50;
+
+	font-family: "Iowan Old Style", "Iowan", "Georgia", serif;
+	/* PWA enhancements */
+  font-size: 17px;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+h1{
+  @apply text-xl leading-loose mt-8 mb-4 font-semibold text-zinc-800 dark:text-zinc-200 ;
+}
+
+
+h2,
+h3 {
+	@apply leading-loose mt-8 mb-4 font-semibold text-zinc-800 dark:text-zinc-200 ;
+}
+
+p {
+	@apply leading-loose my-3 text-zinc-700 dark:text-zinc-400;
+}
+
+a {
+	@apply text-zinc-600 underline underline-offset-4 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50;
+}
+
+pre {
+	@apply m-2 overflow-auto rounded bg-zinc-100 p-3 dark:bg-zinc-800;
+}
+
+code {
+	@apply text-base text-indigo-600 dark:text-indigo-400;
+	font-family: "Hack", monospace;
+}
+
+ul {
+	@apply list-disc pl-6 text-zinc-600 dark:text-zinc-400;
+}
+
+li {
+	@apply my-3;
+}
+
+
+

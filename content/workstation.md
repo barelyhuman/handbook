@@ -1,3 +1,12 @@
+---
+layout: layouts/base.njk
+title: Workstation Setup
+description: Setting up your workstation
+crumbs: [{ title: "Workstation Setup", href: "#" }]
+---
+
+# Workstation Setup
+
 ## Install base set packages
 
 **On MAC OS X**
@@ -57,5 +66,3 @@ used to orchestrate docker containers on the go, which is what is recommended, s
 If working with a project that needs a local postgres database, look through the config to see the development configuration and create the database with the needed users
 
 **But** it is recommend to just use docker to create these databases and use them to avoid having to deal with various postgres version and different user roles
-
-[Go Back](/)

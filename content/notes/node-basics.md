@@ -2,7 +2,6 @@
 layout: layouts/base.njk
 title: NodeJS Basics
 description: Node Basics
-crumbs: [{ title: "Node Basics", href: "#" }]
 ---
 
 # Node Basics

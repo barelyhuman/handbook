@@ -2,7 +2,6 @@
 layout: layouts/base.njk
 title: Workstation Setup
 description: Setting up your workstation
-crumbs: [{ title: "Workstation Setup", href: "#" }]
 ---
 
 # Workstation Setup

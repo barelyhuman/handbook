@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 title: Welcome
 description: Handbook
+eleventyImport:
+  collections: ["posts"]
 ---
 
 ## Hey Developer
@@ -18,22 +20,8 @@ to share with you so we can maintain consistency while working together.
 </p>
 
 <ul>
-	<li className='my-1'>
-			<a className='text-900 dark:text-50' href='/mentality'>Developer Mentality</a>
-	</li>
-	<li className='my-1'>
-			<a className='text-900 dark:text-50' href='/git'>
-				Git Flow Fundamentals
-			</a>
-	</li>
-	<li className='my-1'>
-			<a className='text-900 dark:text-50' href='/workstation'>
-				Workstation Setup
-			</a>
-	</li>
-	<li className='my-1'>
-			<a className='text-900 dark:text-50' href='/node-basics'>
-				Node Basics
-			</a>
-	</li>
-</ul>
+
+{%- for note in collections.notes | reverse -%}
+
+  <li><a href="{{ note.url }}">{{ note.data.title }}</a></li>
+{%- endfor -%}

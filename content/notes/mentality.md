@@ -2,7 +2,6 @@
 layout: layouts/base.njk
 title: Mentality
 description: Developer's Mentality
-crumbs: [{ title: "Developer's Mentality", href: "#" }]
 ---
 
 # Developer's Mentality

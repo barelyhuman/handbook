@@ -2,7 +2,6 @@
 layout: layouts/base.njk
 title: Git Flow
 description: How to use git and it's basics
-crumbs: [{ title: "Git Flow", href: "#" }]
 ---
 
 # Git Setup

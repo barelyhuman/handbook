@@ -6,10 +6,10 @@
 		"dev:css": "npx postcss style.css -o _site/style.css -w",
 		"dev:11ty": "npx @11ty/eleventy --serve",
 		"dev": "run-p dev:*",
-		"gen:index": "npx pagefind --source '_site'",
+		"build:index": "npx pagefind --source '_site'",
 		"build:css": "NODE_ENV=production npx postcss style.css -o _site/style.css -m",
 		"build:11ty": "npx @11ty/eleventy",
-		"build": "npm run clean && run-s build:*",
+		"build": "npm run clean && npm run build:11ty && npm run build:css && npm run build:index",
 		"postbuild": "npm run gen:index"
 	},
 	"prettier": {

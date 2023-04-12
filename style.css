@@ -9,24 +9,23 @@ body {
 
 	font-family: "Iowan Old Style", "Iowan", "Georgia", serif;
 	/* PWA enhancements */
-  font-size: 17px;
+	font-size: 17px;
 	-webkit-overflow-scrolling: touch;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 }
 
-h1{
-  @apply text-xl leading-loose mt-8 mb-4 font-semibold text-zinc-800 dark:text-zinc-200 ;
+h1 {
+	@apply mt-8 mb-4 text-xl font-semibold leading-loose text-zinc-800 dark:text-zinc-200;
 }
-
 
 h2,
 h3 {
-	@apply leading-loose mt-8 mb-4 font-semibold text-zinc-800 dark:text-zinc-200 ;
+	@apply mt-8 mb-4 font-semibold leading-loose text-zinc-800 dark:text-zinc-200;
 }
 
 p {
-	@apply leading-loose my-3 text-zinc-700 dark:text-zinc-400;
+	@apply my-3 leading-loose text-zinc-700 dark:text-zinc-400;
 }
 
 a {
@@ -50,5 +49,10 @@ li {
 	@apply my-3;
 }
 
+.pagefind-ui.pagefind-ui--reset {
+	--pagefind-ui-font: "Iowan Old Style", "Iowan", "Georgia", serif;
+}
 
-
+.pagefind-ui__search-input {
+	@apply !rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-500 !bg-transparent;
+}

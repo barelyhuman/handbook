@@ -12,6 +12,7 @@ locale: en
 		<meta name="description" content="{{ description }}" />
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="alternative" type="application/rss+xml" title="RSS" href="/rss.xml" />
+    <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 		<title>{{ title }}</title>
 	</head>
 
@@ -28,6 +29,10 @@ locale: en
 			class="fixed top-[-1000px] left-0 z-10 h-[calc(1000px+var(--header-height)+1px)] w-full border-b"
 		></div>
 
+    <div class='mx-auto px-4 pt-20 sm:pb-0 max-w-screen-md'>
+      <div id="search"></div>
+    </div>
+
 		<header class="mt-page-top sticky top-0 z-20 h-header-height">
 			<div
 				class="flex h-header-height w-full items-center px-page-gutter before:absolute before:inset-0 before:z-[-1] before:bg-b-low [@supports(backdrop-filter:blur(0))]:before:bg-b-low-a [@supports(backdrop-filter:blur(0))]:before:backdrop-blur-md"
@@ -37,11 +42,20 @@ locale: en
 				</div>
 			</div>
 		</header>
+  
 
 		<main id="content" class='mx-auto px-4 pt-20 sm:pb-0 max-w-screen-md'>
 			<div class="min-h-content w-full max-w-content content mt-10">
 				{{ content | safe }}
 			</div>
 		</main>
+    
+    <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search" });
+        });
+    </script>
+
 	</body>
 </html>

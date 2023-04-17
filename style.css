@@ -51,6 +51,15 @@ li {
 
 .pagefind-ui.pagefind-ui--reset {
 	--pagefind-ui-font: "Iowan Old Style", "Iowan", "Georgia", serif;
+	--pagefind-ui-primary: #fff;
+	--pagefind-ui-text: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+	.pagefind-ui.pagefind-ui--reset {
+		--pagefind-ui-primary: #000;
+		--pagefind-ui-text: #999;
+	}
 }
 
 .pagefind-ui__search-input {
